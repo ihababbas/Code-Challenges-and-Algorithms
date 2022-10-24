@@ -27,26 +27,27 @@ class LinkedList:
                 list.append(current.value)
                 current = current.next
         print(list)
-    
-    def delete(self, value):
-        if value is None:
-            return
-        if self.head is None:
-            return
-        if self.head.value == value:
-            self.head = self.head.next
-            return
-        prev_node = self.head
-        curr_node = self.head.next
-        while curr_node is not None:
-            if curr_node.value == value:
-                prev_node.next = curr_node.next
-                return
-            prev_node = curr_node
-            curr_node = curr_node.next   
-                
+    def get_node(self,value):
+        """
+        this function for getting a nodes 
+        """
+        current=self.head
+        while current.value!=value:
+            current=current.next
+        return current
+	
+class Solution(object):
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+        next = node.next
+        node.val = next.val
+        node.next = next.next
 
-
+            
+	
 
 linkedList1 = LinkedList()
 node1 = Node(4)
@@ -62,6 +63,9 @@ node4 = Node(9)
 linkedList1.append(node4)
 
 linkedList1.printAll()
+node = linkedList1.get_node(node3)
 
-linkedList1.delete(1)
-linkedList1.printAll()
+
+
+
+
