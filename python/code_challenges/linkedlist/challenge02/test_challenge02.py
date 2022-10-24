@@ -17,7 +17,7 @@ def test_zero():
   excepted= print(list)
   assert excepted == actual
   
-def test_zero():
+def test_one():
   linkedList1 = LinkedList()
   linkedList1.push(6)
   linkedList1.push(5)
