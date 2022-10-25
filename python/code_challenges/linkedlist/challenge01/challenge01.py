@@ -1,71 +1,49 @@
-# Write here the code challenge solution
 class Node:
-    def __init__(self,value, next=None):
-        self.value = value
-        self.next = next
+    def __init__(self, value):
+      self.value = value
+      self.next = None
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
 
-    def append(self, node):
-        if self.head is None:
-            self.head = node
-        else:
-            current = self.head
-            while current.next is not None:
-                current = current.next
-            current.next = node
+class LinkedList():
+  def __init__(self):
+    self.head=None
 
-    def printAll(self):
-        list = []
-        if self.head is None:
-            print("The linked list is empty")
-        else:
-            current = self.head
-            while current is not None:
-                list.append(current.value)
-                current = current.next
-        print(list)
-    def get_node(self,value):
-        """
-        this function for getting a nodes 
-        """
-        current=self.head
-        while current.value!=value:
-            current=current.next
-        return current
-	
-class Solution(object):
-    def deleteNode(self, node):
-        """
-        :type node: ListNode
-        :rtype: void Do not return anything, modify node in-place instead.
-        """
-        next = node.next
-        node.val = next.val
-        node.next = next.next
+  def append(self,node):
+    if self.head is None:
+      self.head=node
+    else:
+      current = self.head
+      while current.next is not None:
+        current = current.next
+      current.next=node  
 
-            
-	
-
-linkedList1 = LinkedList()
-node1 = Node(4)
-linkedList1.append(node1)
-
-node2 = Node(5)
-linkedList1.append(node2)
-
-node3 = Node(1)
-linkedList1.append(node3)
-
-node4 = Node(9)
-linkedList1.append(node4)
-
-linkedList1.printAll()
-node = linkedList1.get_node(node3)
+  def __str__(self):
+    output=""
+    if self.head is None : 
+      output = "Empty linked list"
+    else :
+      current=self.head
+      while current : 
+        output+=f'{current.value}-->'
+        current=current.next
+      output+= "None"
+    return output
 
 
 
-
-
+def delete_node(node):
+  temp = node.next
+  node.next = temp.next
+  node.value = temp.value
+  temp.next = None
+  
+if __name__=="__main__":
+  ll = LinkedList()
+  a=Node(3)
+  b=Node(5)
+  c=Node(9)
+  ll.append(a)
+  ll.append(b)
+  ll.append(c)
+  delete_node(b)
+  print(ll)
