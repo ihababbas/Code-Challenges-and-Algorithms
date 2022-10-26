@@ -40,7 +40,7 @@ class LinkedList:
         '''
         first = self.head
         second = self.head
-        
+        origin = self.head
         for i in range(n):
             if(second.next == None):
                 
@@ -53,12 +53,13 @@ class LinkedList:
             second = second.next
             first = first.next
             
-        first.next = first.next.next        
-        
+        first.next = first.next.next 
+             
+        return origin.next
         
 
 
-'''
+
 #to run the code
 
 linkedList1 = LinkedList()
@@ -70,9 +71,10 @@ node3 = Node("C")
 linkedList1.append(node3)
 node4 = Node("D")
 linkedList1.append(node4)
+linkedList1.printAll()     
 linkedList1.deleteNode(2)
 linkedList1.printAll()        
-'''
+
 
 
 
