@@ -36,7 +36,7 @@ class LinkedList:
     
     def deleteNode(self, n):
         '''
-        Given a linked list and an integer N, the task is to delete the Nth node from the end of the given linked list.
+        Given a linked list and an integer N to delete the N node
         '''
         first = self.head
         second = self.head
