@@ -26,7 +26,8 @@ class MyQueue(object):
                     self.stack1.pop()
                 else:
                     return "Unbalanced"
-              
+        if len(x) == 0:
+            self.stack1.append(0)
     
     def output(self):
         """
@@ -52,3 +53,6 @@ stack2 = MyQueue()
 stack2.push("[(hi){}]")
 print(stack2.output())
 
+stack2 = MyQueue()
+stack2.push("")
+print(stack2.output())
