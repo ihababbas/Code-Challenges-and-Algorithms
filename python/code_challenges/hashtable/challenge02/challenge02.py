@@ -9,7 +9,7 @@ def firstRepeat(string):
     dict = Counter(words)
     
     for key in words:
-        if dict[key]>1:
+        if dict[key] > 1:
             return key
     else:
         return "No Repetition"
