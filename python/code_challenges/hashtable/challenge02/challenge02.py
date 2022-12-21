@@ -4,15 +4,14 @@ def firstRepeat(string):
     '''
      :type string: string
      :rtype: string
-    '''
-    words = string.split(" ")
-    dict = Counter(words)
-    
-    for key in words:
-        if dict[key] > 1:
-            return key
-    else:
-        return "No Repetition"
+     '''
+    words = set()
+    for word in string.split():
+        if word in words:
+            return word
+        else:
+            words.add(word)
+    return 'No Repetition'
     
     
 ex1 = "ASAC is a department at LTUC. ASAC teaches programming in LTUC."
